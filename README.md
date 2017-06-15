@@ -1,13 +1,15 @@
 
-DMX generation code.
+DMX generation code in pure Python, works with most USB-serial interfaces. 
 
-This is described in my blog post at [rotormind.com/blog/2015/Generating-RGBY-from-Hue/](http://rotormind.com/blog/2015/Generating-RGBY-from-Hue/)
+This is described in my blog post at
+[rotormind.com/blog/2015/Generating-RGBY-from-Hue/](http://rotormind.com/blog/2015/Generating-RGBY-from-Hue/)
 
-Main DMX generation engine is in pollingthread.py. 
-You can run this from the commandline, but need to set the serial port in 
-the __main__ section.
+Main DMX generation engine is in `pollingthread.py`. 
+You can run this from the command line, but need to set the serial port in 
+the `__main__` section.
 
-The `hsv_to_rgby()` functions described in the blog post are at the end of the file `MainFrame.py`.
+The `hsv_to_rgby()` functions described in the blog post are at the
+end of the file `MainFrame.py`.
 
 The other files are a GUI based on wxPython. See
 https://vcansimplify.wordpress.com/2013/04/08/ultra-quick-guis-with-wxformbuilderpython/
