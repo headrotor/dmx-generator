@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- 
 
 ###########################################################################
-## Python code generated with wxFormBuilder (version Oct  8 2012)
+## Python code generated with wxFormBuilder (version Jun 17 2015)
 ## http://www.wxformbuilder.org/
 ##
 ## PLEASE DO "NOT" EDIT THIS FILE!
@@ -22,7 +22,7 @@ m_mniAboutId = 1003
 class MainFrameBase ( wx.Frame ):
 	
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"RGBY Control", pos = wx.DefaultPosition, size = wx.Size( 345,693 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"RGBY Control", pos = wx.DefaultPosition, size = wx.Size( 570,693 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
@@ -173,9 +173,13 @@ class MainFrameBase ( wx.Frame ):
 		
 		bSizer24.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
 		
+		self.m_gammaCheck = wx.CheckBox( self.m_panel, wx.ID_ANY, u"Gamma", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_gammaCheck.SetValue(True) 
+		bSizer24.Add( self.m_gammaCheck, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL|wx.EXPAND, 5 )
+		
 		m_RGBY_selectChoices = [ u"RGB", u"RGBY", u"sRGBY" ]
 		self.m_RGBY_select = wx.RadioBox( self.m_panel, wx.ID_ANY, u"RGBY mode", wx.DefaultPosition, wx.DefaultSize, m_RGBY_selectChoices, 1, wx.RA_SPECIFY_COLS )
-		self.m_RGBY_select.SetSelection( 2 )
+		self.m_RGBY_select.SetSelection( 0 )
 		bSizer24.Add( self.m_RGBY_select, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, 5 )
 		
 		
@@ -266,6 +270,7 @@ class MainFrameBase ( wx.Frame ):
 		self.m_Hslider.Bind( wx.EVT_SCROLL, self.m_HSVOnScroll )
 		self.m_Sslider.Bind( wx.EVT_SCROLL, self.m_HSVOnScroll )
 		self.m_Vslider.Bind( wx.EVT_SCROLL, self.m_HSVOnScroll )
+		self.m_gammaCheck.Bind( wx.EVT_CHECKBOX, self.m_gammaOnCheck )
 		self.Bind( wx.EVT_MENU, self.m_mniOpenClick, id = self.m_mniOpen.GetId() )
 		self.Bind( wx.EVT_MENU, self.m_mniSaveClick, id = self.m_mniSave.GetId() )
 		self.Bind( wx.EVT_MENU, self.m_mniExitClick, id = self.m_mniExit.GetId() )
@@ -298,6 +303,9 @@ class MainFrameBase ( wx.Frame ):
 		event.Skip()
 	
 	
+	
+	def m_gammaOnCheck( self, event ):
+		event.Skip()
 	
 	def m_mniOpenClick( self, event ):
 		event.Skip()
